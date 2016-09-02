@@ -1,25 +1,95 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lUn-rF-Jrt">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="cZ9-JM-1QM">
+            <objects>
+                <navigationController id="lUn-rF-Jrt" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="1wT-p1-gEb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="U2X-q2-Hsm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cbw-zv-2MN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-530" y="369"/>
+        </scene>
+        <!--UIViewController1-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="UIViewController1" id="rEn-v0-IzF">
+                        <barButtonItem key="leftBarButtonItem" title="do" id="CMh-ZT-5HG">
+                            <connections>
+                                <action selector="transparent:" destination="BYZ-38-t0r" id="3os-sh-pXH"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="go" id="OoG-Wi-jAo">
+                            <connections>
+                                <segue destination="9dP-Li-3xv" kind="show" id="b3r-Tt-8XD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="94" y="369"/>
+        </scene>
+        <!--ViewController2-->
+        <scene sceneID="peg-5z-iz7">
+            <objects>
+                <viewController id="9dP-Li-3xv" customClass="ViewController2" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CwN-6L-0nN"/>
+                        <viewControllerLayoutGuide type="bottom" id="qJ1-TY-kT9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mkP-Sc-cfQ">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tst.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="HUd-XI-y05">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="HUd-XI-y05" firstAttribute="leading" secondItem="mkP-Sc-cfQ" secondAttribute="leading" id="Qxn-6M-hTQ"/>
+                            <constraint firstAttribute="trailing" secondItem="HUd-XI-y05" secondAttribute="trailing" id="cvK-jx-Nof"/>
+                            <constraint firstItem="HUd-XI-y05" firstAttribute="top" secondItem="mkP-Sc-cfQ" secondAttribute="top" id="kqC-mF-yoq"/>
+                            <constraint firstItem="qJ1-TY-kT9" firstAttribute="top" secondItem="HUd-XI-y05" secondAttribute="bottom" id="lxB-8x-Dlw"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="ViewController2" id="6aC-2B-gRe">
+                        <barButtonItem key="rightBarButtonItem" title="undo" id="Are-iq-08L">
+                            <connections>
+                                <action selector="unTransparent:" destination="9dP-Li-3xv" id="lQH-fO-cow"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XJl-aP-ALh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="710" y="369"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="tst.jpg" width="640" height="640"/>
+    </resources>
 </document>

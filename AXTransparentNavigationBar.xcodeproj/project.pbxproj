@@ -15,6 +15,10 @@
 		01D5A8191D791F8B003CBEE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 01D5A8171D791F8B003CBEE1 /* LaunchScreen.storyboard */; };
 		01D5A8241D791F8B003CBEE1 /* AXTransparentNavigationBarTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D5A8231D791F8B003CBEE1 /* AXTransparentNavigationBarTests.m */; };
 		01D5A82F1D791F8B003CBEE1 /* AXTransparentNavigationBarUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D5A82E1D791F8B003CBEE1 /* AXTransparentNavigationBarUITests.m */; };
+		01D5A83E1D79213F003CBEE1 /* UINavigationBar+Transparent.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D5A83D1D79213F003CBEE1 /* UINavigationBar+Transparent.m */; };
+		01D5A8421D792613003CBEE1 /* ViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D5A8411D792613003CBEE1 /* ViewController2.m */; };
+		01D5A8441D792645003CBEE1 /* tst.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 01D5A8431D792645003CBEE1 /* tst.jpg */; };
+		24319CF1CF9DA257D8587A7C /* libPods-AXTransparentNavigationBar.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC34C7D0B9628D964F57D96 /* libPods-AXTransparentNavigationBar.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +55,14 @@
 		01D5A82A1D791F8B003CBEE1 /* AXTransparentNavigationBarUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AXTransparentNavigationBarUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		01D5A82E1D791F8B003CBEE1 /* AXTransparentNavigationBarUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AXTransparentNavigationBarUITests.m; sourceTree = "<group>"; };
 		01D5A8301D791F8B003CBEE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		01D5A83C1D79213F003CBEE1 /* UINavigationBar+Transparent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UINavigationBar+Transparent.h"; path = "Classes/UINavigationBar+Transparent.h"; sourceTree = "<group>"; };
+		01D5A83D1D79213F003CBEE1 /* UINavigationBar+Transparent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UINavigationBar+Transparent.m"; path = "Classes/UINavigationBar+Transparent.m"; sourceTree = "<group>"; };
+		01D5A8401D792613003CBEE1 /* ViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController2.h; sourceTree = "<group>"; };
+		01D5A8411D792613003CBEE1 /* ViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController2.m; sourceTree = "<group>"; };
+		01D5A8431D792645003CBEE1 /* tst.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = tst.jpg; sourceTree = "<group>"; };
+		0FC34C7D0B9628D964F57D96 /* libPods-AXTransparentNavigationBar.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-AXTransparentNavigationBar.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3022CB0B1DB1500E312EE3C6 /* Pods-AXTransparentNavigationBar.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXTransparentNavigationBar.release.xcconfig"; path = "Pods/Target Support Files/Pods-AXTransparentNavigationBar/Pods-AXTransparentNavigationBar.release.xcconfig"; sourceTree = "<group>"; };
+		74C8EA1A1762FB82E3FCBD4A /* Pods-AXTransparentNavigationBar.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AXTransparentNavigationBar.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AXTransparentNavigationBar/Pods-AXTransparentNavigationBar.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24319CF1CF9DA257D8587A7C /* libPods-AXTransparentNavigationBar.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +98,8 @@
 				01D5A8221D791F8B003CBEE1 /* AXTransparentNavigationBarTests */,
 				01D5A82D1D791F8B003CBEE1 /* AXTransparentNavigationBarUITests */,
 				01D5A8071D791F8B003CBEE1 /* Products */,
+				8E47C2F76DCBC631AFB128D8 /* Pods */,
+				5E69274D34FA84AE63910800 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,7 +120,11 @@
 				01D5A80D1D791F8B003CBEE1 /* AppDelegate.m */,
 				01D5A80F1D791F8B003CBEE1 /* ViewController.h */,
 				01D5A8101D791F8B003CBEE1 /* ViewController.m */,
+				01D5A8401D792613003CBEE1 /* ViewController2.h */,
+				01D5A8411D792613003CBEE1 /* ViewController2.m */,
+				01D5A83F1D792142003CBEE1 /* Classes */,
 				01D5A8121D791F8B003CBEE1 /* Main.storyboard */,
+				01D5A8431D792645003CBEE1 /* tst.jpg */,
 				01D5A8151D791F8B003CBEE1 /* Assets.xcassets */,
 				01D5A8171D791F8B003CBEE1 /* LaunchScreen.storyboard */,
 				01D5A81A1D791F8B003CBEE1 /* Info.plist */,
@@ -140,6 +159,32 @@
 			path = AXTransparentNavigationBarUITests;
 			sourceTree = "<group>";
 		};
+		01D5A83F1D792142003CBEE1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				01D5A83C1D79213F003CBEE1 /* UINavigationBar+Transparent.h */,
+				01D5A83D1D79213F003CBEE1 /* UINavigationBar+Transparent.m */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		5E69274D34FA84AE63910800 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0FC34C7D0B9628D964F57D96 /* libPods-AXTransparentNavigationBar.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E47C2F76DCBC631AFB128D8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				74C8EA1A1762FB82E3FCBD4A /* Pods-AXTransparentNavigationBar.debug.xcconfig */,
+				3022CB0B1DB1500E312EE3C6 /* Pods-AXTransparentNavigationBar.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +192,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 01D5A8331D791F8B003CBEE1 /* Build configuration list for PBXNativeTarget "AXTransparentNavigationBar" */;
 			buildPhases = (
+				B715C1ACD6E5474C1101267E /* [CP] Check Pods Manifest.lock */,
 				01D5A8021D791F8B003CBEE1 /* Sources */,
 				01D5A8031D791F8B003CBEE1 /* Frameworks */,
 				01D5A8041D791F8B003CBEE1 /* Resources */,
+				23EC3EA44797A2CD532CD72E /* [CP] Embed Pods Frameworks */,
+				493D03CF385A7CEC915B2C02 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -244,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				01D5A8191D791F8B003CBEE1 /* LaunchScreen.storyboard in Resources */,
+				01D5A8441D792645003CBEE1 /* tst.jpg in Resources */,
 				01D5A8161D791F8B003CBEE1 /* Assets.xcassets in Resources */,
 				01D5A8141D791F8B003CBEE1 /* Main.storyboard in Resources */,
 			);
@@ -265,12 +314,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		23EC3EA44797A2CD532CD72E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AXTransparentNavigationBar/Pods-AXTransparentNavigationBar-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		493D03CF385A7CEC915B2C02 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AXTransparentNavigationBar/Pods-AXTransparentNavigationBar-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B715C1ACD6E5474C1101267E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		01D5A8021D791F8B003CBEE1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				01D5A83E1D79213F003CBEE1 /* UINavigationBar+Transparent.m in Sources */,
 				01D5A8111D791F8B003CBEE1 /* ViewController.m in Sources */,
+				01D5A8421D792613003CBEE1 /* ViewController2.m in Sources */,
 				01D5A80E1D791F8B003CBEE1 /* AppDelegate.m in Sources */,
 				01D5A80B1D791F8B003CBEE1 /* main.m in Sources */,
 			);
@@ -411,6 +510,7 @@
 		};
 		01D5A8341D791F8B003CBEE1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 74C8EA1A1762FB82E3FCBD4A /* Pods-AXTransparentNavigationBar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AXTransparentNavigationBar/Info.plist;
@@ -422,6 +522,7 @@
 		};
 		01D5A8351D791F8B003CBEE1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3022CB0B1DB1500E312EE3C6 /* Pods-AXTransparentNavigationBar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = AXTransparentNavigationBar/Info.plist;
@@ -496,6 +597,7 @@
 				01D5A8351D791F8B003CBEE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01D5A8361D791F8B003CBEE1 /* Build configuration list for PBXNativeTarget "AXTransparentNavigationBarTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +606,7 @@
 				01D5A8381D791F8B003CBEE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		01D5A8391D791F8B003CBEE1 /* Build configuration list for PBXNativeTarget "AXTransparentNavigationBarUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +615,7 @@
 				01D5A83B1D791F8B003CBEE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
