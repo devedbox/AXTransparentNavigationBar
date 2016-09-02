@@ -15,6 +15,8 @@
 @property(assign, nonatomic) BOOL originalTranslucent;
 /// Original background color.
 @property(strong, nonatomic) UIColor *originalBackgroundColor;
+/// Original extended layout includes opaque bars.
+@property(assign, nonatomic) BOOL originalExtendedLayoutIncludesOpaqueBars;
 @end
 
 @implementation UINavigationBar (Transparent)
@@ -60,7 +62,7 @@
                 POPBasicAnimation *ani = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
                 ani.toValue = @(transparent?.0:1.0);
                 ani.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-                ani.duration = 0.4;
+                ani.duration = 0.25;
                 [view pop_addAnimation:ani forKey:@"alpha"];
             } else {
                 view.alpha = transparent?.0:1.0;
@@ -70,9 +72,11 @@
     
     UIResponder *responsder=self;
     while (responsder) {
-        if ([responsder isKindOfClass:UIViewController.class]) {
-            UIViewController *viewController = (UIViewController *)responsder;
-            [viewController.view setNeedsLayout];
+        if ([responsder isKindOfClass:UINavigationController.class]) {
+            UINavigationController *navigationController = (UINavigationController *)responsder;
+            for (UIViewController *viewController in navigationController.viewControllers) {
+                viewController.extendedLayoutIncludesOpaqueBars = YES;
+            }
         }
         responsder = [responsder nextResponder];
     }
@@ -94,5 +98,13 @@
 
 - (void)setOriginalBackgroundColor:(UIColor *)originalBackgroundColor {
     objc_setAssociatedObject(self, @selector(originalBackgroundColor), originalBackgroundColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (BOOL)originalExtendedLayoutIncludesOpaqueBars {
+    return [objc_getAssociatedObject(self, _cmd) boolValue];
+}
+
+- (void)setOriginalExtendedLayoutIncludesOpaqueBars:(BOOL)originalExtendedLayoutIncludesOpaqueBars {
+    objc_setAssociatedObject(self, @selector(originalExtendedLayoutIncludesOpaqueBars), @(originalExtendedLayoutIncludesOpaqueBars), OBJC_ASSOCIATION_RETAIN_NONATOMIC);
 }
 @end

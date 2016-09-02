@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "UINavigationBar+Transparent.h"
 
-@interface ViewController ()
+@interface ViewController () <UINavigationControllerDelegate>
 
 @end
 
@@ -18,20 +18,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    
+//    self.extendedLayoutIncludesOpaqueBars = YES;
+    self.navigationController.delegate = self;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"back" style:0 target:nil action:nil];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-    [self.navigationController.navigationBar setTransparent:NO animated:NO];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
-    [super viewWillDisappear:animated];
-    
-    [self.navigationController.navigationBar setTransparent:YES animated:animated];
+    [self.navigationController.navigationBar setTransparent:YES animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -42,4 +37,5 @@
 - (IBAction)transparent:(id)sender {
     [self.navigationController.navigationBar setTransparent:YES animated:NO];
 }
+
 @end
