@@ -55,18 +55,7 @@
     // Get subviews.
     NSArray<UIView *> *subviews = [self subviews];
     for (UIView *view in subviews) {
-        if ([view isKindOfClass:NSClassFromString(@"_UINavigationBarBackground")]) {
-            if (animated) {
-                [view pop_removeAllAnimations];
-                POPBasicAnimation *ani = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
-                ani.toValue = @(transparent?.0:1.0);
-                ani.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
-                ani.duration = 0.25;
-                [view pop_addAnimation:ani forKey:@"alpha"];
-            } else {
-                view.alpha = transparent?.0:1.0;
-            }
-        } else if ([view isKindOfClass:NSClassFromString(@"_UIBarBackground")]) {
+        if ([view isKindOfClass:NSClassFromString(@"_UINavigationBarBackground")] || [view isKindOfClass:NSClassFromString(@"_UIBarBackground")] || [[NSPredicate predicateWithFormat:@"SELF BEGINSWITH[cd] '_'"] evaluateWithObject:NSStringFromClass(view.class)]) {
             if (animated) {
                 [view pop_removeAllAnimations];
                 POPBasicAnimation *ani = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];
