@@ -55,7 +55,8 @@
     // Get subviews.
     NSArray<UIView *> *subviews = [self subviews];
     for (UIView *view in subviews) {
-        if ([view isKindOfClass:NSClassFromString(@"_UINavigationBarBackground")] || [view isKindOfClass:NSClassFromString(@"_UIBarBackground")] || [[NSPredicate predicateWithFormat:@"SELF BEGINSWITH[cd] '_'"] evaluateWithObject:NSStringFromClass(view.class)]) {
+        if ([view isKindOfClass:NSClassFromString(@"_UINavigationBarBackIndicatorView")]) continue;
+        if (([view isKindOfClass:NSClassFromString(@"_UINavigationBarBackground")] || [view isKindOfClass:NSClassFromString(@"_UIBarBackground")]) || [[NSPredicate predicateWithFormat:@"SELF BEGINSWITH[cd] '_'"] evaluateWithObject:NSStringFromClass(view.class)]) {
             if (animated) {
                 [view pop_removeAllAnimations];
                 POPBasicAnimation *ani = [POPBasicAnimation animationWithPropertyNamed:kPOPViewAlpha];

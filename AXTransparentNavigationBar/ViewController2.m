@@ -24,7 +24,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    [self.navigationController.navigationBar setTransparent:NO animated:NO];
+    [self.navigationController.navigationBar setTransparent:YES animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -255,6 +255,7 @@
 				TargetAttributes = {
 					01D5A8051D791F8B003CBEE1 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 67DW4J3U7D;
 					};
 					01D5A81E1D791F8B003CBEE1 = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -513,6 +514,7 @@
 			baseConfigurationReference = 74C8EA1A1762FB82E3FCBD4A /* Pods-AXTransparentNavigationBar.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 67DW4J3U7D;
 				INFOPLIST_FILE = AXTransparentNavigationBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangyou.AXTransparentNavigationBar;
@@ -525,6 +527,7 @@
 			baseConfigurationReference = 3022CB0B1DB1500E312EE3C6 /* Pods-AXTransparentNavigationBar.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 67DW4J3U7D;
 				INFOPLIST_FILE = AXTransparentNavigationBar/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jiangyou.AXTransparentNavigationBar;
