@@ -42,7 +42,13 @@
 }
 */
 
-- (IBAction)unTransparent:(id)sender {
-    [self.navigationController.navigationBar setTransparent:NO animated:YES];
+- (IBAction)unTransparent:(UIBarButtonItem *)sender {
+    if (self.isNavigationBarTransparent) {
+        [sender setTitle:@"Transparent"];
+    } else {
+        [sender setTitle:@"Untransparent"];
+    }
+    
+    [self setNavigationBarTransparent:!self.isNavigationBarTransparent animated:YES];
 }
 @end

@@ -21,6 +21,8 @@
 //    self.extendedLayoutIncludesOpaqueBars = YES;
     self.navigationController.delegate = self;
     self.navigationItem.backBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"back" style:0 target:nil action:nil];
+    
+    self.navigationController.view.backgroundColor = [UIColor blueColor];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -35,7 +37,13 @@
 }
 
 - (IBAction)transparent:(id)sender {
-    [self.navigationController.navigationBar setTransparent:YES animated:NO];
+    if (self.isNavigationBarTransparent) {
+        [sender setTitle:@"Transparent"];
+    } else {
+        [sender setTitle:@"Untransparent"];
+    }
+    
+    [self setNavigationBarTransparent:!self.isNavigationBarTransparent animated:YES];
 }
 
 @end
