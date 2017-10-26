@@ -26,11 +26,34 @@
 #import "UINavigationBar+Transparent.h"
 #import <objc/runtime.h>
 
+@interface _TPObserver: NSObject
+/// Navigation bar.
+@property(weak, nonatomic) UINavigationBar *navigationBar;
+@end
+
 @interface UINavigationBar (Transparent_Private)
 /// Translucent original value .
 @property(assign, nonatomic) BOOL originalTranslucent;
 /// Original background color.
 @property(strong, nonatomic) UIColor *originalBackgroundColor;
+/// Transparenting view observer.
+@property(readonly, nonatomic) _TPObserver *transparentObserver;
+@end
+
+@implementation _TPObserver
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"alpha"]) {
+        if (self.navigationBar.isTransparent) {
+            if ([change[NSKeyValueChangeNewKey] floatValue] > 0.0) {
+                if ([object isKindOfClass:UIView.class]) {
+                    [(UIView *)object setAlpha:0.0];
+                }
+            }
+        }
+    } else {
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
 @end
 
 @implementation UINavigationBar (Transparent)
@@ -90,6 +113,16 @@
 
 - (void)setOriginalBackgroundColor:(UIColor *)originalBackgroundColor {
     objc_setAssociatedObject(self, @selector(originalBackgroundColor), originalBackgroundColor, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
+
+- (_TPObserver *)transparentObserver {
+    _TPObserver *observer = objc_getAssociatedObject(self, _cmd);
+    if (!observer) {
+        observer = [_TPObserver new];
+        observer.navigationBar = self;
+        objc_setAssociatedObject(self, _cmd, observer, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    }
+    return observer;
 }
 @end
 
