@@ -29,6 +29,10 @@
 @interface _TPObserver: NSObject
 /// Navigation bar.
 @property(weak, nonatomic) UINavigationBar *navigationBar;
+/// Observing views.
+@property(strong, nonatomic) NSMutableArray *observingViews;
+
+- (void)addObservingView:(__kindof UIView *)view;
 @end
 
 @interface UINavigationBar (Transparent_Private)
@@ -41,6 +45,16 @@
 @end
 
 @implementation _TPObserver
+- (void)dealloc {
+    for (UIView *view in _observingViews) { [view removeObserver:self forKeyPath:@"alpha"]; }
+}
+
+- (void)addObservingView:(__kindof UIView *)view {
+    [view addObserver:self forKeyPath:@"alpha" options:NSKeyValueObservingOptionNew context:NULL];
+    if (!_observingViews) _observingViews = [NSMutableArray array];
+    [_observingViews addObject:view];
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
     if ([keyPath isEqualToString:@"alpha"]) {
         if (self.navigationBar.isTransparent) {
@@ -81,7 +95,9 @@
     NSArray<UIView *> *subviews = [self subviews];
     for (UIView *view in subviews) {
         if ([view isKindOfClass:NSClassFromString(@"_UINavigationBarBackIndicatorView")]) continue;
+        if ([view isKindOfClass:NSClassFromString(@"_UINavigationBarContentView")]) continue; // _UINavigationBarContentView on iOS 11.x.
         if (([view isKindOfClass:NSClassFromString(@"_UINavigationBarBackground")] || [view isKindOfClass:NSClassFromString(@"_UIBarBackground")]) || [[NSPredicate predicateWithFormat:@"SELF BEGINSWITH[cd] '_'"] evaluateWithObject:NSStringFromClass(view.class)]) {
+            [self.transparentObserver addObservingView:view];
             if (animated) {
                 [UIView animateWithDuration:0.25 animations:^{
                     view.alpha = transparent?.0:1.0;
